@@ -1,19 +1,19 @@
 <template>
   <div id="repeat-item">
     <div id="header">
-      <img class="head" src="../assets/logo.png" alt="">
+      <img class="head" :src="this.avatar_src" alt="">
       <div class="message">
-        <p>张三丰</p>
-        <p>2020.10.11</p>
+        <p>{{this.nick_name}}</p>
+        <p>{{this.pushDay.year}}.{{this.pushDay.month}}.{{this.pushDay.day}}</p>
       </div>
       <div class="point">
         <img src="../assets/image/components/san-lian/point.png" alt="">
-        <p>233</p>
+        <p>{{this.praise_count}}</p>
       </div>
     </div>
 
     <div id="text">
-      <p>有一起打游戏的吗？顺风不浪，逆风不投，有很抢电竞精神，他们都夸我：人菜瘾大</p>
+      <p>{{this.content}}</p>
     </div>
 
     <show-picture id="pictures" :pics="this.pics"/>
@@ -24,17 +24,33 @@
 
 <script>
 import ShowPicture from './ShowPicture.vue'
+import dayjs from 'dayjs'
 export default {
   name: 'RepeatItem',
   components: {
     ShowPicture
   },
+  data () {
+    return {
+      pushDay: {}
+    }
+  },
   props: {
     avatar_src: String,
-    nickname: String,
+    nick_name: String,
     publish_time: Number,
     content: String,
-    pics: Array
+    pics: Array,
+    praise_count: Number
+  },
+  mounted () {
+    const Day = dayjs.unix(this.publish_time)
+    // console.log(Day);
+    this.pushDay = {
+      year: Day.$y,
+      month: Day.$M + 1,
+      day: Day.$D
+    }
   }
 }
 </script>

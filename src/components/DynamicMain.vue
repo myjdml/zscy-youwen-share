@@ -36,7 +36,6 @@
 <script>
 import SanLian from './SanLian.vue'
 import ShowPicture from './ShowPicture.vue'
-import 'dayjs';
 import dayjs from 'dayjs';
 export default {
   components: { ShowPicture, SanLian },
@@ -83,7 +82,7 @@ export default {
       height: 80px;
       margin-left: 20px;
       // margin: 16px 0 0 16px;
-      border: black solid 1px;
+      // border: black solid 1px;
       border-radius: 40px;
     }
     .message {
