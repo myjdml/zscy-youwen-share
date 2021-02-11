@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-02-11 15:42:26
+ * @LastEditTime: 2021-02-11 16:58:07
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -198,6 +198,7 @@ export default {
   methods: {
   },
   mounted () {
+    /* eslint-disable no-console */
     console.log(this.repeatInfo[0])
     // 请求接口数据
     getDynamicMainInfo({ id: 82 })
