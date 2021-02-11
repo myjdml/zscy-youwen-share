@@ -24,7 +24,7 @@
       <div># {{this.topic}}</div>
     </div>
 
-    <san-lian 
+    <san-lian
       class="sanlian"
       :praise_count="this.praise_count"
       :comment_count="this.comment_count"></san-lian>
@@ -36,7 +36,7 @@
 <script>
 import SanLian from './SanLian.vue'
 import ShowPicture from './ShowPicture.vue'
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 export default {
   components: { ShowPicture, SanLian },
   name: 'DynamicMain',
