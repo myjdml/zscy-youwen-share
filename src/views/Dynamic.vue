@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-02-14 12:36:57
+ * @LastEditTime: 2021-02-17 18:53:18
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -204,7 +204,7 @@ export default {
     getDynamicMainInfo({ id: 82 })
       .then((response) => {
         console.log('res: ', response)
-        this.mainInfo = response.data
+        this.mainInfo = response.data.data
         console.log('mainInfo: ', this.mainInfo)
       })
   }
