@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-02-17 18:53:18
+ * @LastEditTime: 2021-02-17 20:23:17
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -36,7 +36,7 @@
 import DynamicMain from '../components/DynamicMain.vue'
 import JumpToApp from '../components/JumpToApp.vue'
 import RepeatItem from '../components/RepeatItem.vue'
-import { getDynamicMainInfo } from '../server/index.js'
+import { getDynamicRepeatInfo, getDynamicMainInfo } from '../server/index.js'
 
 export default {
   name: 'Dynamic',
@@ -200,11 +200,18 @@ export default {
   mounted () {
     /* eslint-disable no-console */
     console.log(this.repeatInfo[0])
-    // 请求接口数据
+    // 请求帖子主体信息接口数据
     getDynamicMainInfo({ id: 82 })
       .then((response) => {
         console.log('res: ', response)
         this.mainInfo = response.data.data
+        console.log('mainInfo: ', this.mainInfo)
+      })
+    // 请求帖子回复信息接口数据
+    getDynamicRepeatInfo({ post_id: 1 })
+      .then((response) => {
+        console.log('res: ', response)
+        this.repeatInfo = response.data.data
         console.log('mainInfo: ', this.mainInfo)
       })
   }

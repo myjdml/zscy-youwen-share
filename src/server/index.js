@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-09 00:20:19
  * @LastEditors: myjdml
- * @LastEditTime: 2021-02-17 18:49:19
+ * @LastEditTime: 2021-02-17 20:24:19
  * @FilePath: /zscy-youwen-share/src/server/index.js
  * @Description: nothing is everything
  */
@@ -22,12 +22,23 @@ export const instance = axios.create({
 })
 
 /**
- * @description: 邮问分享获取主题信息
+ * @description: 邮问分享获取帖子主体信息
  * @param {*} data
  * @return {*}
  */
 export function getDynamicMainInfo (data) {
   return instance.get('/post/getPostInfo', {
+    params: data
+  })
+}
+
+/**
+ * @description: 邮问分享获取帖子回复
+ * @param {*} data
+ * @return {*}
+ */
+export function getDynamicRepeatInfo (data) {
+  return instance.get('/comment/getallcomment', {
     params: data
   })
 }
