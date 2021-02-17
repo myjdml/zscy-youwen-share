@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-02-11 16:58:07
+ * @LastEditTime: 2021-02-14 12:36:57
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -203,7 +203,9 @@ export default {
     // 请求接口数据
     getDynamicMainInfo({ id: 82 })
       .then((response) => {
-        console.log(response)
+        console.log('res: ', response)
+        this.mainInfo = response.data
+        console.log('mainInfo: ', this.mainInfo)
       })
   }
 }
