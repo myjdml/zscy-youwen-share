@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-02-24 09:40:03
+ * @LastEditTime: 2021-02-24 13:18:14
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -203,16 +203,16 @@ export default {
     // 请求帖子主体信息接口数据
     getDynamicMainInfo({ id: 82 })
       .then((response) => {
-        console.log('res: ', response)
+        console.log('帖子res: ', response)
         this.mainInfo = response.data.data
-        console.log('mainInfo: ', this.mainInfo)
+        console.log('帖子mainInfo: ', this.mainInfo)
       })
     // 请求帖子回复信息接口数据
     getDynamicRepeatInfo({ post_id: 1 })
       .then((response) => {
-        console.log('res: ', response)
+        console.log('回复res: ', response)
         this.repeatInfo = response.data.data
-        console.log('mainInfo: ', this.mainInfo)
+        console.log('回复mainInfo: ', this.mainInfo)
       })
   }
 }
