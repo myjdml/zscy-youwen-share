@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-02-17 20:23:17
+ * @LastEditTime: 2021-02-24 09:40:03
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -144,7 +144,7 @@ export default {
           post_id: '1',
           comment_id: '429',
           reply_id: '',
-          avatar: 'a',
+          avatar: '',
           nick_name: 'yan',
           publish_time: 1609241574,
           content: 'test photo',
