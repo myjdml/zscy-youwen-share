@@ -1,3 +1,11 @@
+<!--
+ * @Author: myjdml
+ * @Date: 2021-02-07 18:44:52
+ * @LastEditors: myjdml
+ * @LastEditTime: 2021-02-25 19:23:44
+ * @FilePath: /zscy-youwen-share/src/components/JumpToApp.vue
+ * @Description: nothing is everything
+-->
 <template>
   <div id="jump-to-app">
     <div class="cover"></div>
@@ -7,6 +15,8 @@
 </template>
 
 <script>
+import parseQueryString from '../utils/parseQueryString'
+
 export default {
   name: 'JnmpToApp',
   data () {
@@ -14,6 +24,24 @@ export default {
     }
   },
   methods: {
+    parseQueryString (url) {
+      var obj = {}
+      var keyvalue = []
+      var key = ''
+      var value = ''
+      var paraString = url.substring(url.indexOf('?') + 1, url.length).split('&')
+      for (var i in paraString) {
+        keyvalue = paraString[i].split('=')
+        key = keyvalue[0]
+        value = keyvalue[1]
+        obj[key] = value
+      }
+      return obj
+    }
+  },
+  mounted () {
+    const zyOptions = parseQueryString(window.location.href)
+    console.log(zyOptions)
   }
 }
 </script>
