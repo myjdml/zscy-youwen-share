@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-02-24 13:18:14
+ * @LastEditTime: 2021-02-28 13:20:45
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -70,7 +70,7 @@ export default {
           post_id: '1',
           comment_id: '2',
           reply_id: '',
-          avatar: 'a',
+          avatar: '',
           nick_name: 'yan',
           publish_time: 1607992408,
           content: 'test photo',
@@ -90,7 +90,7 @@ export default {
           post_id: '1',
           comment_id: '24',
           reply_id: '',
-          avatar: 'a',
+          avatar: '',
           nick_name: 'yan',
           publish_time: 1608007208,
           content: 'test',
@@ -107,7 +107,7 @@ export default {
           post_id: '1',
           comment_id: '361',
           reply_id: '',
-          avatar: 'a',
+          avatar: '',
           nick_name: 'yan',
           publish_time: 1608696910,
           content: 'test photo',
@@ -208,7 +208,7 @@ export default {
         console.log('帖子mainInfo: ', this.mainInfo)
       })
     // 请求帖子回复信息接口数据
-    getDynamicRepeatInfo({ post_id: 1 })
+    getDynamicRepeatInfo({ post_id: 82 })
       .then((response) => {
         console.log('回复res: ', response)
         this.repeatInfo = response.data.data
