@@ -2,15 +2,15 @@
  * @Author: myjdml
  * @Date: 2021-02-09 00:20:19
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-01 01:12:44
+ * @LastEditTime: 2021-03-01 20:08:20
  * @FilePath: /zscy-youwen-share/src/server/index.js
  * @Description: nothing is everything
  */
 import axios from 'axios'
 
 // const TOKEN = 'Bearer ' + `${localStorage.getItem('id_token')}`
-const TOKEN = 'Bearer ' + 'eyJjb2xsZWdlIjoi6L2v5Lu25bel56iL5a2m6ZmiIiwiZXhwIjoiMTYxNDE4NjMyNiIsImdlbmRlciI6IueUtyIsImhlYWRJbWdVcmwiOiJodHRwOi8vY2RuLnJlZHJvY2sudGVhbS9tYWdpcG9rZV8yMDE5MjEzODk1XzE2MDk0MDc3MTEucG5nIiwiaWF0IjoiMTYxNDE0MzEyNiIsImludHJvZHVjdGlvbiI6IiIsIm5pY2tuYW1lIjoiY29kZXIiLCJwaG9uZSI6IiIsInFxIjoiIiwicmVhbE5hbWUiOiLmr5vlsKfkv4oiLCJyZWRpZCI6IjQwMTU2NDkzZmQxM2VlOGEyYjQyMzFjY2VjMzk2ODRiN2IyMDllZGMiLCJzdHVOdW0iOiIyMDE5MjEzODk1Iiwic3ViIjoicG9ja2V0In0=.cZbiI1f/KIInFBhCgcmaAE6/pP+Tu7GNwCyIZszYx1hbTHnt+SP289Hp2LXdDIGGFwHr0Gtsn1az4HhWIN0hH6qBlV70lgVP2j1k7WH4EJZKfsx4gSwTX4vyCJq861U9w2xMskqncuIXdCuTYHfT4cnNyFXYRq8Ipyalm+wM3Oforq511ut4H85uW+toOwdt5d0/BrmCFRKfpGYm36A2J6q2QAIkjT4mJz/Hm0Lus1qIaJlL3RFpjR23PKIu6qol4Oq77HIVsvnBAjn4HHAArGvKtzexor0I3YnXd2d+qcrIE2x8FYnQ8E9DNcKueEwxJk3gpIeD9kcht/LZjqoyDA=='
-const BACEURL = process.env.NODE_ENV === 'production' ? 'https://be-prod.redrock.team/magipoke-loop' : '/api'
+const TOKEN = 'Bearer ' + 'eyJjb2xsZWdlIjoi6L2v5Lu25bel56iL5a2m6ZmiIiwiZXhwIjoiMTYxNDY0MzY4NCIsImdlbmRlciI6IueUtyIsImhlYWRJbWdVcmwiOiJodHRwOi8vY2RuLnJlZHJvY2sudGVhbS9tYWdpcG9rZV8yMDE5MjEzODk1XzE2MDk0MDc3MTEucG5nIiwiaWF0IjoiMTYxNDYwMDQ4NCIsImludHJvZHVjdGlvbiI6IiIsIm5pY2tuYW1lIjoiY29kZXIiLCJwaG9uZSI6IiIsInFxIjoiIiwicmVhbE5hbWUiOiLmr5vlsKfkv4oiLCJyZWRpZCI6IjQwMTU2NDkzZmQxM2VlOGEyYjQyMzFjY2VjMzk2ODRiN2IyMDllZGMiLCJzdHVOdW0iOiIyMDE5MjEzODk1Iiwic3ViIjoicG9ja2V0In0=.qKnKnyDz38vr0O09No8ZiZogD4dHEjOeXVP/SJllWHzxjyNia5SPhLf5I8PZk+lzAD22bsJiv8kYRJYuwCtjcd6mJoAOasVvDWuwzzfsPkMR7oC7skCuRUnQeYeiW5EJ3v1ZKDc9msjDycthJ2snGcg1Q5ye87EwEk+UVP4XAt4Bt7B0ssn6cMhwepqQmAf15+6ChI0pVqZLSxxXWINLFJE64UDNWp0dO+Lznzc2YiHorYHVdUUCqNr/b/H8ObervaDNu9JMDku/05PKo/5uETb1s0RQSx/NPpS9o/0SgQKsRqnWo3bYgtibAnSrKQIy5pxo/yIg78NxKNg3ANR11A=='
+const BACEURL = process.env.NODE_ENV === 'production' ? 'https://cyxbsmobile.redrock.team/wxapi/magipoke-loop' : '/api'
 axios.defaults.headers.common.Authorization = TOKEN
 
 export const instance = axios.create({
