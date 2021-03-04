@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-01 20:04:17
+ * @LastEditTime: 2021-03-04 17:21:33
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -200,6 +200,7 @@ export default {
   mounted () {
     /* eslint-disable no-console */
     // console.log(this.repeatInfo[0])
+    console.log('text')
     // 请求帖子主体信息接口数据
     getDynamicMainInfo({ id: 82 })
       .then((response) => {
