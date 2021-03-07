@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-04 17:21:33
+ * @LastEditTime: 2021-03-07 12:29:05
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -37,6 +37,7 @@ import DynamicMain from '../components/DynamicMain.vue'
 import JumpToApp from '../components/JumpToApp.vue'
 import RepeatItem from '../components/RepeatItem.vue'
 import { getDynamicRepeatInfo, getDynamicMainInfo } from '../server/index.js'
+import parseQueryString from '../utils/parseQueryString'
 
 export default {
   name: 'Dynamic',
@@ -197,23 +198,29 @@ export default {
   },
   methods: {
   },
+  beforeCreate () {
+    const zyOptions = parseQueryString(window.location.href)
+    console.log(zyOptions)
+    localStorage.setItem('id', zyOptions.id)
+    localStorage.setItem('id_token', zyOptions.id_token)
+    console.log('验证token存储效果', 'id:', localStorage.getItem('id'), 'id_token:', localStorage.getItem('id_token'))
+  },
   mounted () {
     /* eslint-disable no-console */
     // console.log(this.repeatInfo[0])
-    console.log('text')
     // 请求帖子主体信息接口数据
-    getDynamicMainInfo({ id: 82 })
+    getDynamicMainInfo({ id: localStorage.getItem('id') })
       .then((response) => {
         console.log('帖子res: ', response)
         this.mainInfo = response.data.data
         console.log('帖子mainInfo: ', this.mainInfo)
       })
     // 请求帖子回复信息接口数据
-    getDynamicRepeatInfo({ post_id: 82 })
+    getDynamicRepeatInfo({ post_id: localStorage.getItem('id') })
       .then((response) => {
         console.log('回复res: ', response)
         this.repeatInfo = response.data.data
-        console.log('回复mainInfo: ', this.mainInfo)
+        console.log('回复mainInfo: ', this.repeatInfo)
       })
   }
 }
