@@ -12,6 +12,7 @@
     "callapp-lib": "^3.3.0",
     "core-js": "^3.8.3",
     "dayjs": "^1.10.4",
+    "postcss-px-to-viewport": "^1.1.1",
     "sass-resources-loader": "^2.1.1",
     "vconsole": "^3.4.0",
     "vue": "^2.6.11",
