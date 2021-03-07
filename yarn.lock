@@ -2228,6 +2228,11 @@ call-me-maybe@^1.0.1:
   resolved "https://registry.npm.taobao.org/call-me-maybe/download/call-me-maybe-1.0.1.tgz#26d208ea89e37b5cbde60250a15f031c16a4d66b"
   integrity sha1-JtII6onje1y95gJQoV8DHBak1ms=
 
+callapp-lib@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.npm.taobao.org/callapp-lib/download/callapp-lib-3.3.0.tgz#0996f2471043f363e4c3011e32cdaf927d757e33"
+  integrity sha1-CZbyRxBD82PkwwEeMs2vkn11fjM=
+
 caller-callsite@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/caller-callsite/download/caller-callsite-2.0.0.tgz#847e0fce0a223750a9a027c54b33731ad3154134"
@@ -6645,8 +6650,8 @@ postcss-ordered-values@^4.1.2:
 
 postcss-px-to-viewport@^1.1.1:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/postcss-px-to-viewport/-/postcss-px-to-viewport-1.1.1.tgz#a25ca410b553c9892cc8b525cc710da47bf1aa55"
-  integrity sha512-2x9oGnBms+e0cYtBJOZdlwrFg/mLR4P1g2IFu7jYKvnqnH/HLhoKyareW2Q/x4sg0BgklHlP1qeWo2oCyPm8FQ==
+  resolved "https://registry.npm.taobao.org/postcss-px-to-viewport/download/postcss-px-to-viewport-1.1.1.tgz#a25ca410b553c9892cc8b525cc710da47bf1aa55"
+  integrity sha1-olykELVTyYksyLUlzHENpHvxqlU=
   dependencies:
     object-assign ">=4.0.1"
     postcss ">=5.0.2"
