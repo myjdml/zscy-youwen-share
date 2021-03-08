@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-03-07 17:33:02
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-08 19:39:50
+ * @LastEditTime: 2021-03-08 20:24:27
  * @FilePath: /zscy-youwen-share/src/views/Quanzi.vue
  * @Description: nothing is everything
 -->
@@ -41,6 +41,7 @@ import DynamicMain from '../components/DynamicMain.vue'
 import JumpToApp from '../components/JumpToApp.vue'
 import QuanziHead from '../components/Quanzi/QuanziHead.vue'
 import { getQuanziLatestPosts, getQuanziHotPosts } from '../server/index.js'
+import parseQueryString from '../utils/parseQueryString'
 export default {
   components: { QuanziHead, DynamicMain, JumpToApp },
   name: 'Quanzi',
@@ -108,6 +109,15 @@ export default {
           is_praised: 0
         }
       ]
+    }
+  },
+  beforeCreate () {
+    const quanziOptions = parseQueryString(window.location.href)
+    if (quanziOptions.id !== undefined) {
+      localStorage.setItem('quanzi_id', quanziOptions.id)
+    }
+    if (quanziOptions.id_token !== undefined) {
+      localStorage.setItem('id_token', quanziOptions.id_token.replace(/%20/g, '+').replace(/%2F/g, '/').replace(/%3D/g, '='))
     }
   },
   methods: {

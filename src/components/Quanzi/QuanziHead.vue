@@ -16,57 +16,11 @@
 </template>
 
 <script>
+import { getQuanziInfo } from '../../server/index.js'
 export default {
   name: 'QuanziHead',
   data () {
     return {
-      allQuanzi: [
-        {
-          topic_id: 1,
-          topic_logo: 'http://cdn.redrock.team/magipoke-loop_WenTiYanJiuSuo.png',
-          topic_name: 'QA',
-          new_mes_count: 31,
-          follow_count: 12,
-          is_follow: 0,
-          introduction: '小明友你是否有很多问号?欢迎在这里提出一切你想间的问题，万一有人知道答宋呢～'
-        },
-        {
-          topic_id: 2,
-          topic_logo: 'http://cdn.redrock.team/magipoke-loop_chihewanle.png',
-          topic_name: '吃喝玩乐',
-          new_mes_count: 0,
-          follow_count: 10,
-          is_follow: 0,
-          introduction: '好吃狗的聚集地,发现更多核园周边好去处!寻找开黑队友，丰院你的校园生活～'
-        },
-        {
-          topic_id: 3,
-          topic_logo: 'http://cdn.redrock.team/magipoke-loop_WenTiYanJiuSuo.png',
-          topic_name: '问题研究所',
-          new_mes_count: -2,
-          follow_count: 10,
-          is_follow: 0,
-          introduction: '小明友你是否有很多问号?欢迎在这里提出一切你想间的问题，万一有人知道答宋呢～'
-        },
-        {
-          topic_id: 4,
-          topic_logo: 'http://cdn.redrock.team/magipoke-loop_FenXiangShenHuo.png',
-          topic_name: '分享生活',
-          new_mes_count: 0,
-          follow_count: 0,
-          is_follow: 0,
-          introduction: '频繁的记录，不仅要为快乐、时光留下一些证据，更国为生活值得~'
-        },
-        {
-          topic_id: 5,
-          topic_logo: 'http://cdn.redrock.team/magipoke-loop_KuoLie.png',
-          topic_name: '扩列圈',
-          new_mes_count: 0,
-          follow_count: 0,
-          is_follow: 0,
-          introduction: '找同好,找队友，让你的大学生活不孤单，听说还可从海底捞哦~'
-        }
-      ],
       currentQuanzi: {
         topic_id: 1,
         topic_logo: 'http://cdn.redrock.team/magipoke-loop_WenTiYanJiuSuo.png',
@@ -77,6 +31,11 @@ export default {
         introduction: '小明友你是否有很多问号?欢迎在这里提出一切你想间的问题，万一有人知道答宋呢～'
       }
     }
+  },
+  mounted () {
+    getQuanziInfo().then((response) => {
+      this.currentQuanzi = response.data.data[0]
+    })
   }
 }
 </script>

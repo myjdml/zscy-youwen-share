@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-09 00:20:19
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-08 17:48:11
+ * @LastEditTime: 2021-03-08 19:46:11
  * @FilePath: /zscy-youwen-share/src/server/index.js
  * @Description: nothing is everything
  */
@@ -66,4 +66,13 @@ export function getQuanziLatestPosts (data) {
   return instance.get('/post/getLoopPage', {
     params: data
   })
+}
+
+/**
+ * @description: 获取所有圈子信息
+ * @param {*}
+ * @return {*}
+ */
+export function getQuanziInfo () {
+  return instance.post('/ground/getTopicGround')
 }
