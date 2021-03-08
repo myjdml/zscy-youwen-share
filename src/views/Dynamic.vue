@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-07 14:09:31
+ * @LastEditTime: 2021-03-08 19:08:19
  * @FilePath: /zscy-youwen-share/src/views/Dynamic.vue
  * @Description: nothing is everything
 -->
@@ -203,7 +203,7 @@ export default {
     console.log(zyOptions)
     localStorage.setItem('id', zyOptions.id)
     localStorage.setItem('id_token', zyOptions.id_token.replace(/%20/g, '+').replace(/%2F/g, '/').replace(/%3D/g, '='))
-    console.log('验证token存储效果', 'id:', localStorage.getItem('id'), 'id_token:', localStorage.getItem('id_token'))
+    // console.log('验证token存储效果', 'id:', localStorage.getItem('id'), 'id_token:', localStorage.getItem('id_token'))
   },
   mounted () {
     /* eslint-disable no-console */

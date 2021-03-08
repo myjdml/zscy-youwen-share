@@ -1,7 +1,8 @@
 <template>
   <div id="repeat-item">
     <div id="header">
-      <img class="head" :src="this.avatar_src" alt="">
+      <img v-if="this.avatar_src != ''" class="head" :src="this.avatar_src" alt="">
+      <img v-if="this.avatar_src == ''" class="head" src="../assets/image/icons/default-avatar.png" alt="">
       <div class="message">
         <p>{{this.nick_name}}</p>
         <p>{{this.pushDay.year}}.{{this.pushDay.month}}.{{this.pushDay.day}}</p>
