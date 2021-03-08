@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-09 00:20:19
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-07 12:23:40
+ * @LastEditTime: 2021-03-08 17:48:11
  * @FilePath: /zscy-youwen-share/src/server/index.js
  * @Description: nothing is everything
  */
@@ -42,6 +42,28 @@ export function getDynamicMainInfo (data) {
  */
 export function getDynamicRepeatInfo (data) {
   return instance.get('/comment/getallcomment', {
+    params: data
+  })
+}
+
+/**
+ * @description: 邮问圈子最热帖子获取接口
+ * @param {*} data {loop, page, size, type:(hot)}
+ * @return {*}
+ */
+export function getQuanziHotPosts (data) {
+  return instance.get('/post/getLoopPage', {
+    params: data
+  })
+}
+
+/**
+ * @description: 邮问圈子最热帖子获取接口
+ * @param {*} data {loop, page, size, type:(latest)}
+ * @return {*}
+ */
+export function getQuanziLatestPosts (data) {
+  return instance.get('/post/getLoopPage', {
     params: data
   })
 }

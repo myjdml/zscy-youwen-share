@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-02-07 18:44:52
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-07 14:26:53
+ * @LastEditTime: 2021-03-07 20:19:54
  * @FilePath: /zscy-youwen-share/src/components/JumpToApp.vue
  * @Description: nothing is everything
 -->
@@ -41,10 +41,13 @@ export default {
         //   host: 'oia.zhihu.com/question/270839820/answer/477722658',
         //   pathKey: 'action',
         // },
+        universal: {
+          host: 'share.redrock.team'
+        },
         appstore: 'https://itunes.apple.com/cn/app/id974026615',
         // yingyongbao: '//a.app.qq.com/o/simple.jsp?pkgname=com.zhihu.android',
         fallback: 'https://wx.redrock.team/app/#/',
-        timeout: 2000
+        timeout: 5000
       }
       const callLib = new CallApp(options)
 

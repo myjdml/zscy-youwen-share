@@ -1,17 +1,16 @@
 <template>
   <div id="quanzi-head">
     <div id="header">
-      <img class="head" src="../../assets/logo.png" alt="">
+      <img class="head" :src="this.currentQuanzi.topic_logo" alt="">
       <div class="message">
-        <p>校园周边</p>
-        <p>478个成员</p>
+        <p>{{this.currentQuanzi.topic_name}}</p>
+        <p>{{this.currentQuanzi.follow_count}}个成员</p>
       </div>
       <div class="btn-attention">+关注</div>
     </div>
 
     <div id="text">
-      <p><span>圈子简介: </span>祝重邮70周年快乐，祝红岩网校20周年快乐~祝
-重邮70周年快乐，祝红岩网校20周年快乐~</p>
+      <p><span>圈子简介: </span>{{this.currentQuanzi.introduction}}</p>
     </div>
   </div>
 </template>
@@ -20,7 +19,64 @@
 export default {
   name: 'QuanziHead',
   data () {
-    return {}
+    return {
+      allQuanzi: [
+        {
+          topic_id: 1,
+          topic_logo: 'http://cdn.redrock.team/magipoke-loop_WenTiYanJiuSuo.png',
+          topic_name: 'QA',
+          new_mes_count: 31,
+          follow_count: 12,
+          is_follow: 0,
+          introduction: '小明友你是否有很多问号?欢迎在这里提出一切你想间的问题，万一有人知道答宋呢～'
+        },
+        {
+          topic_id: 2,
+          topic_logo: 'http://cdn.redrock.team/magipoke-loop_chihewanle.png',
+          topic_name: '吃喝玩乐',
+          new_mes_count: 0,
+          follow_count: 10,
+          is_follow: 0,
+          introduction: '好吃狗的聚集地,发现更多核园周边好去处!寻找开黑队友，丰院你的校园生活～'
+        },
+        {
+          topic_id: 3,
+          topic_logo: 'http://cdn.redrock.team/magipoke-loop_WenTiYanJiuSuo.png',
+          topic_name: '问题研究所',
+          new_mes_count: -2,
+          follow_count: 10,
+          is_follow: 0,
+          introduction: '小明友你是否有很多问号?欢迎在这里提出一切你想间的问题，万一有人知道答宋呢～'
+        },
+        {
+          topic_id: 4,
+          topic_logo: 'http://cdn.redrock.team/magipoke-loop_FenXiangShenHuo.png',
+          topic_name: '分享生活',
+          new_mes_count: 0,
+          follow_count: 0,
+          is_follow: 0,
+          introduction: '频繁的记录，不仅要为快乐、时光留下一些证据，更国为生活值得~'
+        },
+        {
+          topic_id: 5,
+          topic_logo: 'http://cdn.redrock.team/magipoke-loop_KuoLie.png',
+          topic_name: '扩列圈',
+          new_mes_count: 0,
+          follow_count: 0,
+          is_follow: 0,
+          introduction: '找同好,找队友，让你的大学生活不孤单，听说还可从海底捞哦~'
+        }
+      ],
+      currentQuanzi: {
+        topic_id: 1,
+        topic_logo: 'http://cdn.redrock.team/magipoke-loop_WenTiYanJiuSuo.png',
+        topic_name: 'QA',
+        new_mes_count: 31,
+        follow_count: 12,
+        is_follow: 0,
+        introduction: '小明友你是否有很多问号?欢迎在这里提出一切你想间的问题，万一有人知道答宋呢～'
+      }
+    }
   }
 }
 </script>
@@ -37,7 +93,7 @@ export default {
       height: 96px;
       margin-left: 20px;
       // margin: 16px 0 0 16px;
-      border: black solid 1px;
+      // border: black solid 1px;
       border-radius: 50px;
     }
     .message {
