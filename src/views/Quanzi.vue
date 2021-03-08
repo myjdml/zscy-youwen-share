@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-03-07 17:33:02
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-08 18:36:02
+ * @LastEditTime: 2021-03-08 19:39:50
  * @FilePath: /zscy-youwen-share/src/views/Quanzi.vue
  * @Description: nothing is everything
 -->
@@ -112,7 +112,6 @@ export default {
   },
   methods: {
     newestClick (event) {
-      console.log('click', this.$el)
       this.$refs.line.style.left = '3.7vw'
       this.$refs.lastest.className = 'div-second unfocous'
       event.target.className = 'div-first focous'
@@ -127,7 +126,6 @@ export default {
       })
     },
     lastestClick (event) {
-      console.log('click', this.$el)
       this.$refs.line.style.left = '19.7vw'
       this.$refs.newest.className = 'div-first unfocous'
       event.target.className = 'div-second focous'
