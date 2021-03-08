@@ -2,7 +2,7 @@
  * @Author: myjdml
  * @Date: 2021-03-07 17:33:02
  * @LastEditors: myjdml
- * @LastEditTime: 2021-03-08 20:24:27
+ * @LastEditTime: 2021-03-08 20:31:26
  * @FilePath: /zscy-youwen-share/src/views/Quanzi.vue
  * @Description: nothing is everything
 -->
@@ -127,7 +127,7 @@ export default {
       event.target.className = 'div-first focous'
       // 加载最新帖子
       getQuanziLatestPosts({
-        loop: 1,
+        loop: localStorage.getItem('quanzi_id'),
         page: 1,
         size: 6,
         type: 'latest'
@@ -141,7 +141,7 @@ export default {
       event.target.className = 'div-second focous'
       // 加载最热帖子
       getQuanziHotPosts({
-        loop: 1,
+        loop: localStorage.getItem('quanzi_id'),
         page: 1,
         size: 6,
         type: 'hot'
@@ -155,7 +155,7 @@ export default {
     console.log(this.quanziPosts)
     // 加载最新帖子
     getQuanziLatestPosts({
-      loop: 1,
+      loop: localStorage.getItem('quanzi_id'),
       page: 1,
       size: 6,
       type: 'latest'

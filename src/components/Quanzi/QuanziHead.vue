@@ -34,7 +34,7 @@ export default {
   },
   mounted () {
     getQuanziInfo().then((response) => {
-      this.currentQuanzi = response.data.data[0]
+      this.currentQuanzi = response.data.data[localStorage.getItem('quanzi_id') - 1]
     })
   }
 }
